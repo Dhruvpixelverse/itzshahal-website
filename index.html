@@ -1,0 +1,2191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>itzshahal | Creator</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+html{scroll-behavior:smooth}
+
+body{
+    background:#080811;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+a{text-decoration:none;color:inherit}
+button{border:0;cursor:pointer}
+
+body:before,
+body:after{
+    content:"";
+    position:fixed;
+    width:330px;
+    height:330px;
+    border-radius:50%;
+    filter:blur(110px);
+    opacity:.18;
+    z-index:-1;
+}
+
+body:before{
+    background:#7c3aed;
+    top:-130px;
+    left:-120px;
+}
+
+body:after{
+    background:#06b6d4;
+    right:-130px;
+    bottom:-120px;
+}
+
+/* NAVBAR */
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:1000;
+    background:rgba(8,8,17,.78);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.nav{
+    max-width:1150px;
+    margin:auto;
+    padding:16px 22px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:800;
+}
+
+.logo span{
+    color:#9b7cff;
+}
+
+.nav-right{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.nav-links{
+    display:flex;
+    gap:22px;
+}
+
+.nav-links a{
+    color:#aaa;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:white;
+}
+
+.user-btn,
+.admin-btn{
+    padding:9px 14px;
+    border-radius:20px;
+    background:rgba(255,255,255,.07);
+    color:white;
+}
+
+.admin-btn{
+    background:linear-gradient(135deg,#7c3aed,#06b6d4);
+}
+
+.menu{
+    display:none;
+    font-size:24px;
+    background:none;
+    color:white;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    padding:120px 20px 70px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.hero-content{
+    max-width:850px;
+    animation:up .9s ease;
+}
+
+.badge{
+    display:inline-block;
+    padding:8px 16px;
+    border:1px solid rgba(255,255,255,.13);
+    border-radius:30px;
+    background:rgba(255,255,255,.05);
+    color:#c4b5fd;
+    margin-bottom:22px;
+}
+
+.hero h1{
+    font-size:clamp(45px,8vw,82px);
+    line-height:1;
+    margin-bottom:20px;
+}
+
+.gradient{
+    background:linear-gradient(90deg,#a78bfa,#22d3ee);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.hero p{
+    color:#999;
+    font-size:19px;
+    margin-bottom:30px;
+}
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:13px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:13px 22px;
+    border-radius:30px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+.primary{
+    background:linear-gradient(135deg,#7c3aed,#06b6d4);
+    color:white;
+}
+
+.secondary{
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.13);
+}
+
+/* SECTIONS */
+
+section{
+    max-width:1150px;
+    margin:auto;
+    padding:90px 22px;
+}
+
+.title{
+    text-align:center;
+    font-size:38px;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    text-align:center;
+    color:#777;
+    margin-bottom:40px;
+}
+
+/* CARDS */
+
+.card{
+    background:rgba(255,255,255,.045);
+    border:1px solid rgba(255,255,255,.09);
+    border-radius:20px;
+    padding:25px;
+    backdrop-filter:blur(12px);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    border-color:rgba(139,92,246,.45);
+}
+
+/* ABOUT */
+
+.about{
+    max-width:850px;
+    margin:auto;
+    text-align:center;
+    color:#aaa;
+    line-height:1.8;
+}
+
+/* GAMES */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.game-icon{
+    font-size:45px;
+    margin-bottom:14px;
+}
+
+.tag{
+    color:#a78bfa;
+    font-size:13px;
+    margin:8px 0 12px;
+}
+
+.card p{
+    color:#999;
+    line-height:1.6;
+}
+
+.play{
+    display:inline-block;
+    margin-top:17px;
+    padding:10px 17px;
+    border-radius:20px;
+    background:rgba(139,92,246,.16);
+    color:#c4b5fd;
+}
+
+/* SKILLS */
+
+.skill{
+    text-align:center;
+}
+
+.skill-icon{
+    font-size:32px;
+    margin-bottom:10px;
+}
+
+/* STATS */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.stat{
+    text-align:center;
+}
+
+.stat h2{
+    font-size:42px;
+    color:#a78bfa;
+}
+
+.stat p{
+    color:#777;
+}
+
+/* CONTACT */
+
+.contact{
+    max-width:800px;
+    margin:auto;
+    text-align:center;
+}
+
+.contact-info{
+    display:grid;
+    gap:12px;
+    margin:25px 0;
+    color:#aaa;
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:30px 20px;
+    border-top:1px solid rgba(255,255,255,.08);
+    color:#666;
+}
+
+/* MODALS */
+
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.72);
+    backdrop-filter:blur(8px);
+    z-index:5000;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.modal-box{
+    width:100%;
+    max-width:420px;
+    background:#11111d;
+    border:1px solid #29293d;
+    border-radius:24px;
+    padding:28px;
+    box-shadow:0 20px 80px rgba(0,0,0,.5);
+}
+
+.modal-box h2{
+    text-align:center;
+    margin-bottom:7px;
+}
+
+.modal-box .desc{
+    text-align:center;
+    color:#777;
+    font-size:14px;
+    margin-bottom:22px;
+}
+
+label{
+    display:block;
+    color:#aaa;
+    font-size:14px;
+    margin:13px 0 7px;
+}
+
+input,
+textarea{
+    width:100%;
+    padding:12px 13px;
+    background:#090910;
+    color:white;
+    border:1px solid #2a2a3e;
+    border-radius:11px;
+    outline:none;
+}
+
+input:focus,
+textarea:focus{
+    border-color:#7c3aed;
+}
+
+.modal-actions{
+    display:flex;
+    gap:10px;
+    margin-top:18px;
+}
+
+.modal-actions button{
+    flex:1;
+}
+
+.close{
+    background:#242438;
+    color:white;
+}
+
+.switch{
+    text-align:center;
+    margin-top:17px;
+    color:#777;
+    font-size:14px;
+}
+
+.switch span{
+    color:#a78bfa;
+    cursor:pointer;
+}
+
+/* PROFILE */
+
+.profile-card{
+    text-align:center;
+}
+
+.avatar{
+    width:75px;
+    height:75px;
+    border-radius:50%;
+    margin:0 auto 15px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:30px;
+    background:linear-gradient(135deg,#7c3aed,#06b6d4);
+}
+
+.logout{
+    margin-top:18px;
+    width:100%;
+    padding:12px;
+    border-radius:20px;
+    background:#29293b;
+    color:white;
+}
+
+/* ADMIN */
+
+#adminPanel{
+    position:fixed;
+    inset:0;
+    z-index:7000;
+    background:#07070e;
+    display:none;
+    overflow-y:auto;
+}
+
+.admin-head{
+    position:sticky;
+    top:0;
+    z-index:5;
+    padding:17px 22px;
+    background:rgba(7,7,14,.92);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid #242437;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.admin-head h2{
+    color:#a78bfa;
+}
+
+.admin-wrap{
+    max-width:1100px;
+    margin:auto;
+    padding:30px 20px 80px;
+}
+
+.admin-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.admin-card{
+    background:#11111b;
+    border:1px solid #27273b;
+    border-radius:18px;
+    padding:22px;
+}
+
+.full{
+    grid-column:1/-1;
+}
+
+.admin-card h3{
+    margin-bottom:18px;
+}
+
+.save{
+    margin-top:17px;
+    padding:11px 18px;
+    border-radius:22px;
+    background:linear-gradient(135deg,#7c3aed,#06b6d4);
+    color:white;
+    font-weight:bold;
+}
+
+.item{
+    border:1px solid #29293c;
+    border-radius:12px;
+    padding:13px;
+    margin-bottom:10px;
+}
+
+.item-buttons{
+    display:flex;
+    gap:8px;
+    margin-top:10px;
+}
+
+.small{
+    padding:8px 12px;
+    border-radius:18px;
+    background:#252538;
+    color:white;
+}
+
+.delete{
+    color:#ff9baa;
+    background:#351a22;
+}
+
+.add{
+    margin-top:8px;
+    padding:10px 15px;
+    border-radius:20px;
+    color:#c4b5fd;
+    background:#19192b;
+    border:1px solid #36364c;
+}
+
+/* TOAST */
+
+#toast{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    z-index:9999;
+    background:#181827;
+    border:1px solid #34344b;
+    padding:13px 18px;
+    border-radius:12px;
+    transform:translateY(100px);
+    opacity:0;
+    transition:.3s;
+}
+
+#toast.show{
+    transform:translateY(0);
+    opacity:1;
+}
+
+/* ANIMATION */
+
+@keyframes up{
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+    .nav-links{
+        display:none;
+        position:absolute;
+        top:65px;
+        left:15px;
+        right:15px;
+        padding:18px;
+        border-radius:16px;
+        background:#11111b;
+        border:1px solid #29293d;
+        flex-direction:column;
+    }
+
+    .nav-links.show{
+        display:flex;
+    }
+
+    .menu{
+        display:block;
+    }
+
+    .nav-right{
+        gap:8px;
+    }
+
+    .admin-btn{
+        display:none;
+    }
+
+    .grid,
+    .stats,
+    .admin-grid{
+        grid-template-columns:1fr;
+    }
+
+    .full{
+        grid-column:auto;
+    }
+
+    .hero h1{
+        font-size:52px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+<div class="nav">
+
+    <div class="logo">
+        itz<span>shahal</span>
+    </div>
+
+    <div class="nav-right">
+
+        <div class="nav-links" id="navLinks">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#games">Games</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+        <button class="user-btn" id="accountBtn" onclick="openAccount()">
+            👤 Account
+        </button>
+
+        <button class="admin-btn" onclick="openAdminLogin()">
+            ⚙ Admin
+        </button>
+
+        <button class="menu" onclick="toggleMenu()">☰</button>
+
+    </div>
+</div>
+</nav>
+
+<!-- HOME -->
+
+<header class="hero" id="home">
+
+<div class="hero-content">
+
+    <div class="badge">
+        ✨ Creator Portfolio
+    </div>
+
+    <h1>
+        Hi, I'm
+        <span class="gradient" id="heroName">
+            itzshahal
+        </span>
+    </h1>
+
+    <p id="heroTagline">
+        Creator • Developer • Dreamer
+    </p>
+
+    <div class="buttons">
+
+        <a href="#games" class="btn primary">
+            🎮 My Games
+        </a>
+
+        <a href="#contact" class="btn secondary">
+            📩 Contact Me
+        </a>
+
+    </div>
+
+</div>
+</header>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<h2 class="title">About Me</h2>
+
+<p class="subtitle">
+    A little something about the creator
+</p>
+
+<div class="card about">
+    <p id="aboutText"></p>
+</div>
+
+</section>
+
+<!-- GAMES -->
+
+<section id="games">
+
+<h2 class="title">My Games</h2>
+
+<p class="subtitle">
+    Games and projects created by me
+</p>
+
+<div class="grid" id="gamesContainer"></div>
+
+</section>
+
+<!-- PROJECTS -->
+
+<section>
+
+<h2 class="title">Featured Projects</h2>
+
+<p class="subtitle">
+    Things I'm building and exploring
+</p>
+
+<div class="grid" id="projectsContainer"></div>
+
+</section>
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+<h2 class="title">My Skills</h2>
+
+<p class="subtitle">
+    Things I enjoy working with
+</p>
+
+<div class="grid" id="skillsContainer"></div>
+
+</section>
+
+<!-- STATS -->
+
+<section>
+
+<h2 class="title">Creator Stats</h2>
+
+<p class="subtitle">
+    A few numbers from the journey
+</p>
+
+<div class="stats">
+
+<div class="card stat">
+    <h2 id="gamesStat">00</h2>
+    <p>Games Created</p>
+</div>
+
+<div class="card stat">
+    <h2 id="projectsStat">00</h2>
+    <p>Projects</p>
+</div>
+
+<div class="card stat">
+    <h2 id="ideasStat">∞</h2>
+    <p>Ideas</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<h2 class="title">Let's Connect</h2>
+
+<p class="subtitle">
+    Want to talk or collaborate?
+</p>
+
+<div class="card contact">
+
+<div class="contact-info">
+
+<div>📧 <span id="emailText"></span></div>
+<div>📸 <span id="instagramText"></span></div>
+<div>💻 <span id="githubText"></span></div>
+
+</div>
+
+<a id="emailButton" class="btn primary">
+    📩 Send Email
+</a>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 All Rights Reserved<br>
+Created by <strong>itzshahal</strong> ✨
+</footer>
+
+
+<!-- LOGIN MODAL -->
+
+<div class="modal" id="loginModal">
+
+<div class="modal-box">
+
+<h2>🔐 Login</h2>
+
+<p class="desc">
+    Welcome back!
+</p>
+
+<label>Email / Username</label>
+<input id="loginUser" placeholder="Enter username or email">
+
+<label>Password</label>
+<input id="loginPass" type="password" placeholder="Enter password">
+
+<div class="modal-actions">
+
+<button class="btn primary" onclick="loginUser()">
+Login
+</button>
+
+<button class="btn close" onclick="closeModal('loginModal')">
+Close
+</button>
+
+</div>
+
+<p class="switch">
+Don't have an account?
+<span onclick="showSignup()">Sign Up</span>
+</p>
+
+</div>
+</div>
+
+
+<!-- SIGNUP MODAL -->
+
+<div class="modal" id="signupModal">
+
+<div class="modal-box">
+
+<h2>✨ Create Account</h2>
+
+<p class="desc">
+    Join the creator community
+</p>
+
+<label>Username</label>
+<input id="signupUser" placeholder="Choose username">
+
+<label>Email</label>
+<input id="signupEmail" type="email" placeholder="Enter email">
+
+<label>Password</label>
+<input id="signupPass" type="password" placeholder="Create password">
+
+<div class="modal-actions">
+
+<button class="btn primary" onclick="signupUser()">
+Create Account
+</button>
+
+<button class="btn close" onclick="closeModal('signupModal')">
+Close
+</button>
+
+</div>
+
+<p class="switch">
+Already have an account?
+<span onclick="showLogin()">Login</span>
+</p>
+
+</div>
+</div>
+
+
+<!-- ACCOUNT MODAL -->
+
+<div class="modal" id="accountModal">
+
+<div class="modal-box profile-card">
+
+<div class="avatar">👤</div>
+
+<h2 id="profileName">
+User
+</h2>
+
+<p class="desc" id="profileEmail">
+user@email.com
+</p>
+
+<button class="logout" onclick="logoutUser()">
+🚪 Logout
+</button>
+
+<button class="btn close" style="width:100%;margin-top:10px"
+onclick="closeModal('accountModal')">
+Close
+</button>
+
+</div>
+</div>
+
+
+<!-- ADMIN LOGIN -->
+
+<div class="modal" id="adminLoginModal">
+
+<div class="modal-box">
+
+<h2>⚙ Admin Login</h2>
+
+<p class="desc">
+    Owner control panel
+</p>
+
+<label>Admin Password</label>
+
+<input
+    id="adminPass"
+    type="password"
+    placeholder="Enter admin password"
+>
+
+<div class="modal-actions">
+
+<button class="btn primary" onclick="adminLogin()">
+Login
+</button>
+
+<button class="btn close"
+onclick="closeModal('adminLoginModal')">
+Close
+</button>
+
+</div>
+
+</div>
+</div>
+
+
+<!-- ADMIN PANEL -->
+
+<div id="adminPanel">
+
+<div class="admin-head">
+
+<h2>⚙ Admin Panel</h2>
+
+<button class="small"
+onclick="closeAdmin()">
+✕ Close
+</button>
+
+</div>
+
+<div class="admin-wrap">
+
+<div class="admin-grid">
+
+<!-- GENERAL -->
+
+<div class="admin-card">
+
+<h3>👤 General</h3>
+
+<label>Creator Name</label>
+<input id="editName">
+
+<label>Tagline</label>
+<input id="editTagline">
+
+<label>About</label>
+<textarea id="editAbout"></textarea>
+
+<button class="save" onclick="saveGeneral()">
+💾 Save
+</button>
+
+</div>
+
+
+<!-- STATS -->
+
+<div class="admin-card">
+
+<h3>📊 Stats</h3>
+
+<label>Games</label>
+<input id="editGamesStat">
+
+<label>Projects</label>
+<input id="editProjectsStat">
+
+<label>Ideas</label>
+<input id="editIdeasStat">
+
+<button class="save" onclick="saveStats()">
+💾 Save
+</button>
+
+</div>
+
+
+<!-- GAMES -->
+
+<div class="admin-card full">
+
+<h3>🎮 Manage Games</h3>
+
+<div id="adminGames"></div>
+
+<button class="add" onclick="addGame()">
+＋ Add Game
+</button>
+
+</div>
+
+
+<!-- PROJECTS -->
+
+<div class="admin-card">
+
+<h3>🚀 Projects</h3>
+
+<div id="adminProjects"></div>
+
+<button class="add" onclick="addProject()">
+＋ Add Project
+</button>
+
+</div>
+
+
+<!-- SKILLS -->
+
+<div class="admin-card">
+
+<h3>🛠 Skills</h3>
+
+<div id="adminSkills"></div>
+
+<button class="add" onclick="addSkill()">
+＋ Add Skill
+</button>
+
+</div>
+
+
+<!-- CONTACT -->
+
+<div class="admin-card full">
+
+<h3>📩 Contact</h3>
+
+<label>Email</label>
+<input id="editEmail">
+
+<label>Instagram</label>
+<input id="editInstagram">
+
+<label>GitHub</label>
+<input id="editGithub">
+
+<button class="save" onclick="saveContact()">
+💾 Save Contact
+</button>
+
+</div>
+
+
+<!-- PASSWORD -->
+
+<div class="admin-card full">
+
+<h3>🔑 Admin Password</h3>
+
+<label>New Password</label>
+<input type="password" id="newAdminPass">
+
+<button class="save" onclick="changeAdminPassword()">
+🔐 Change Password
+</button>
+
+</div>
+
+</div>
+</div>
+</div>
+
+
+<div id="toast">
+Saved successfully!
+</div>
+
+
+<script>
+
+/* ==========================
+   DEFAULT DATA
+========================== */
+
+const defaultData={
+
+name:"itzshahal",
+
+tagline:"Creator • Developer • Dreamer",
+
+about:"I'm a creative developer who loves building games, websites and new ideas. This website is my small corner of the internet where I can share my projects and journey.",
+
+gamesStat:"00",
+projectsStat:"00",
+ideasStat:"∞",
+
+email:"your@email.com",
+instagram:"@yourusername",
+github:"@yourusername",
+
+games:[
+{
+icon:"🎮",
+name:"Your Game Name",
+genre:"YOUR GENRE",
+description:"Write a short description of your game...",
+link:"#"
+},
+{
+icon:"🕹️",
+name:"Another Game",
+genre:"ACTION / FUN",
+description:"Add your own game description here.",
+link:"#"
+},
+{
+icon:"🚀",
+name:"Future Game",
+genre:"ADVENTURE",
+description:"Your next amazing game can appear here.",
+link:"#"
+}
+],
+
+projects:[
+{
+icon:"🌐",
+name:"Web Projects",
+description:"Creative websites and web experiments."
+},
+{
+icon:"🎮",
+name:"Game Projects",
+description:"Games and interactive experiences."
+},
+{
+icon:"💡",
+name:"Creative Ideas",
+description:"Ideas that may become future projects."
+},
+{
+icon:"🚀",
+name:"Future Projects",
+description:"More exciting things are coming."
+}
+],
+
+skills:[
+{icon:"🌐",name:"HTML"},
+{icon:"🎨",name:"CSS"},
+{icon:"⚡",name:"JavaScript"},
+{icon:"🎮",name:"Game Development"},
+{icon:"💻",name:"Web Development"},
+{icon:"💡",name:"Creative Ideas"}
+]
+
+};
+
+
+/* ==========================
+   DATA
+========================== */
+
+let data=
+JSON.parse(localStorage.getItem("itzshahalData"))
+||defaultData;
+
+
+/* ==========================
+   ACCOUNTS
+========================== */
+
+let accounts=
+JSON.parse(localStorage.getItem("itzshahalAccounts"))
+||[];
+
+
+let currentUser=
+JSON.parse(localStorage.getItem("itzshahalCurrentUser"))
+||null;
+
+
+/* ==========================
+   ADMIN PASSWORD
+========================== */
+
+let adminPassword=
+localStorage.getItem("itzshahalAdminPassword")
+||"1234";
+
+
+/* ==========================
+   SAVE
+========================== */
+
+function saveData(){
+
+localStorage.setItem(
+"itzshahalData",
+JSON.stringify(data)
+);
+
+}
+
+
+/* ==========================
+   WEBSITE
+========================== */
+
+function renderWebsite(){
+
+document.getElementById("heroName").textContent=data.name;
+
+document.getElementById("heroTagline").textContent=data.tagline;
+
+document.getElementById("aboutText").textContent=data.about;
+
+document.getElementById("gamesStat").textContent=data.gamesStat;
+
+document.getElementById("projectsStat").textContent=data.projectsStat;
+
+document.getElementById("ideasStat").textContent=data.ideasStat;
+
+document.getElementById("emailText").textContent=data.email;
+
+document.getElementById("instagramText").textContent=data.instagram;
+
+document.getElementById("githubText").textContent=data.github;
+
+document.getElementById("emailButton").href=
+"mailto:"+data.email;
+
+
+/* GAMES */
+
+let games=document.getElementById("gamesContainer");
+
+games.innerHTML="";
+
+data.games.forEach(game=>{
+
+games.innerHTML+=`
+
+<div class="card">
+
+<div class="game-icon">
+${game.icon}
+</div>
+
+<h3>${escapeHTML(game.name)}</h3>
+
+<div class="tag">
+${escapeHTML(game.genre)}
+</div>
+
+<p>
+${escapeHTML(game.description)}
+</p>
+
+<a class="play" href="${game.link}">
+▶ Play Game
+</a>
+
+</div>
+
+`;
+
+});
+
+
+/* PROJECTS */
+
+let projects=
+document.getElementById("projectsContainer");
+
+projects.innerHTML="";
+
+data.projects.forEach(project=>{
+
+projects.innerHTML+=`
+
+<div class="card">
+
+<div class="game-icon">
+${project.icon}
+</div>
+
+<h3>${escapeHTML(project.name)}</h3>
+
+<p>
+${escapeHTML(project.description)}
+</p>
+
+</div>
+
+`;
+
+});
+
+
+/* SKILLS */
+
+let skills=
+document.getElementById("skillsContainer");
+
+skills.innerHTML="";
+
+data.skills.forEach(skill=>{
+
+skills.innerHTML+=`
+
+<div class="card skill">
+
+<div class="skill-icon">
+${skill.icon}
+</div>
+
+<h3>${escapeHTML(skill.name)}</h3>
+
+</div>
+
+`;
+
+});
+
+updateAccountButton();
+
+}
+
+
+/* ==========================
+   ACCOUNT BUTTON
+========================== */
+
+function updateAccountButton(){
+
+let btn=document.getElementById("accountBtn");
+
+if(currentUser){
+
+btn.textContent="👤 "+currentUser.username;
+
+}else{
+
+btn.textContent="👤 Login";
+
+}
+
+}
+
+
+/* ==========================
+   LOGIN / SIGNUP
+========================== */
+
+function openAccount(){
+
+if(currentUser){
+
+document.getElementById("profileName").textContent=
+currentUser.username;
+
+document.getElementById("profileEmail").textContent=
+currentUser.email;
+
+openModal("accountModal");
+
+}else{
+
+showLogin();
+
+}
+
+}
+
+
+function showLogin(){
+
+closeModal("signupModal");
+
+openModal("loginModal");
+
+}
+
+
+function showSignup(){
+
+closeModal("loginModal");
+
+openModal("signupModal");
+
+}
+
+
+function signupUser(){
+
+let username=
+document.getElementById("signupUser").value.trim();
+
+let email=
+document.getElementById("signupEmail").value.trim();
+
+let pass=
+document.getElementById("signupPass").value;
+
+if(!username||!email||!pass){
+
+alert("Please fill all fields.");
+
+return;
+
+}
+
+if(pass.length<4){
+
+alert("Password should be at least 4 characters.");
+
+return;
+
+}
+
+let exists=accounts.find(
+a=>a.username.toLowerCase()===username.toLowerCase()
+);
+
+if(exists){
+
+alert("Username already exists.");
+
+return;
+
+}
+
+accounts.push({
+username:username,
+email:email,
+password:pass
+});
+
+localStorage.setItem(
+"itzshahalAccounts",
+JSON.stringify(accounts)
+);
+
+currentUser={
+username:username,
+email:email
+};
+
+localStorage.setItem(
+"itzshahalCurrentUser",
+JSON.stringify(currentUser)
+);
+
+closeModal("signupModal");
+
+updateAccountButton();
+
+showToast("Account created!");
+
+}
+
+
+function loginUser(){
+
+let user=
+document.getElementById("loginUser").value.trim();
+
+let pass=
+document.getElementById("loginPass").value;
+
+let found=accounts.find(a=>
+(
+a.username.toLowerCase()===user.toLowerCase()
+||
+a.email.toLowerCase()===user.toLowerCase()
+)
+&&
+a.password===pass
+);
+
+if(!found){
+
+alert("Wrong username/email or password.");
+
+return;
+
+}
+
+currentUser={
+username:found.username,
+email:found.email
+};
+
+localStorage.setItem(
+"itzshahalCurrentUser",
+JSON.stringify(currentUser)
+);
+
+closeModal("loginModal");
+
+updateAccountButton();
+
+showToast("Login successful!");
+
+}
+
+
+function logoutUser(){
+
+currentUser=null;
+
+localStorage.removeItem(
+"itzshahalCurrentUser"
+);
+
+closeModal("accountModal");
+
+updateAccountButton();
+
+showToast("Logged out!");
+
+}
+
+
+/* ==========================
+   MODALS
+========================== */
+
+function openModal(id){
+
+document.getElementById(id).style.display="flex";
+
+}
+
+function closeModal(id){
+
+document.getElementById(id).style.display="none";
+
+}
+
+
+/* ==========================
+   ADMIN LOGIN
+========================== */
+
+function openAdminLogin(){
+
+openModal("adminLoginModal");
+
+document.getElementById("adminPass").value="";
+
+}
+
+
+function adminLogin(){
+
+let pass=
+document.getElementById("adminPass").value;
+
+if(pass!==adminPassword){
+
+alert("Incorrect admin password.");
+
+return;
+
+}
+
+closeModal("adminLoginModal");
+
+openAdmin();
+
+}
+
+
+function openAdmin(){
+
+document.getElementById("adminPanel").style.display="block";
+
+loadAdmin();
+
+}
+
+
+function closeAdmin(){
+
+document.getElementById("adminPanel").style.display="none";
+
+}
+
+
+/* ==========================
+   ADMIN LOAD
+========================== */
+
+function loadAdmin(){
+
+document.getElementById("editName").value=data.name;
+
+document.getElementById("editTagline").value=data.tagline;
+
+document.getElementById("editAbout").value=data.about;
+
+document.getElementById("editGamesStat").value=data.gamesStat;
+
+document.getElementById("editProjectsStat").value=data.projectsStat;
+
+document.getElementById("editIdeasStat").value=data.ideasStat;
+
+document.getElementById("editEmail").value=data.email;
+
+document.getElementById("editInstagram").value=data.instagram;
+
+document.getElementById("editGithub").value=data.github;
+
+renderAdminGames();
+
+renderAdminProjects();
+
+renderAdminSkills();
+
+}
+
+
+/* ==========================
+   GENERAL
+========================== */
+
+function saveGeneral(){
+
+data.name=
+document.getElementById("editName").value;
+
+data.tagline=
+document.getElementById("editTagline").value;
+
+data.about=
+document.getElementById("editAbout").value;
+
+saveData();
+
+renderWebsite();
+
+showToast("General saved!");
+
+}
+
+
+/* ==========================
+   STATS
+========================== */
+
+function saveStats(){
+
+data.gamesStat=
+document.getElementById("editGamesStat").value;
+
+data.projectsStat=
+document.getElementById("editProjectsStat").value;
+
+data.ideasStat=
+document.getElementById("editIdeasStat").value;
+
+saveData();
+
+renderWebsite();
+
+showToast("Stats saved!");
+
+}
+
+
+/* ==========================
+   CONTACT
+========================== */
+
+function saveContact(){
+
+data.email=
+document.getElementById("editEmail").value;
+
+data.instagram=
+document.getElementById("editInstagram").value;
+
+data.github=
+document.getElementById("editGithub").value;
+
+saveData();
+
+renderWebsite();
+
+showToast("Contact saved!");
+
+}
+
+
+/* ==========================
+   GAMES ADMIN
+========================== */
+
+function renderAdminGames(){
+
+let box=
+document.getElementById("adminGames");
+
+box.innerHTML="";
+
+data.games.forEach((game,index)=>{
+
+box.innerHTML+=`
+
+<div class="item">
+
+<strong>
+${game.icon} ${escapeHTML(game.name)}
+</strong>
+
+<div class="item-buttons">
+
+<button class="small"
+onclick="editGame(${index})">
+✏ Edit
+</button>
+
+<button class="small delete"
+onclick="deleteGame(${index})">
+🗑 Delete
+</button>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+}
+
+
+function addGame(){
+
+let name=prompt("Game name:");
+
+if(!name)return;
+
+let genre=prompt("Game genre:");
+
+let description=prompt("Game description:");
+
+let link=prompt("Game link:");
+
+data.games.push({
+
+icon:"🎮",
+
+name:name,
+
+genre:genre||"GAME",
+
+description:description||"My new game.",
+
+link:link||"#"
+
+});
+
+saveData();
+
+renderWebsite();
+
+renderAdminGames();
+
+showToast("Game added!");
+
+}
+
+
+function editGame(index){
+
+let game=data.games[index];
+
+let name=prompt("Game name:",game.name);
+
+if(!name)return;
+
+let genre=prompt("Genre:",game.genre);
+
+let description=
+prompt("Description:",game.description);
+
+let link=prompt("Game link:",game.link);
+
+game.name=name;
+
+game.genre=genre||game.genre;
+
+game.description=
+description||game.description;
+
+game.link=link||game.link;
+
+saveData();
+
+renderWebsite();
+
+renderAdminGames();
+
+showToast("Game updated!");
+
+}
+
+
+function deleteGame(index){
+
+if(confirm("Delete this game?")){
+
+data.games.splice(index,1);
+
+saveData();
+
+renderWebsite();
+
+renderAdminGames();
+
+showToast("Game deleted!");
+
+}
+
+}
+
+
+/* ==========================
+   PROJECTS
+========================== */
+
+function renderAdminProjects(){
+
+let box=
+document.getElementById("adminProjects");
+
+box.innerHTML="";
+
+data.projects.forEach((project,index)=>{
+
+box.innerHTML+=`
+
+<div class="item">
+
+<strong>
+${project.icon} ${escapeHTML(project.name)}
+</strong>
+
+<div class="item-buttons">
+
+<button class="small"
+onclick="editProject(${index})">
+✏ Edit
+</button>
+
+<button class="small delete"
+onclick="deleteProject(${index})">
+🗑 Delete
+</button>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+}
+
+
+function addProject(){
+
+let name=prompt("Project name:");
+
+if(!name)return;
+
+let description=
+prompt("Project description:");
+
+data.projects.push({
+
+icon:"🚀",
+
+name:name,
+
+description:
+description||"My project."
+
+});
+
+saveData();
+
+renderWebsite();
+
+renderAdminProjects();
+
+showToast("Project added!");
+
+}
+
+
+function editProject(index){
+
+let project=data.projects[index];
+
+let name=
+prompt("Project name:",project.name);
+
+if(!name)return;
+
+let description=
+prompt("Description:",project.description);
+
+project.name=name;
+
+if(description)
+project.description=description;
+
+saveData();
+
+renderWebsite();
+
+renderAdminProjects();
+
+showToast("Project updated!");
+
+}
+
+
+function deleteProject(index){
+
+if(confirm("Delete this project?")){
+
+data.projects.splice(index,1);
+
+saveData();
+
+renderWebsite();
+
+renderAdminProjects();
+
+showToast("Project deleted!");
+
+}
+
+}
+
+
+/* ==========================
+   SKILLS
+========================== */
+
+function renderAdminSkills(){
+
+let box=
+document.getElementById("adminSkills");
+
+box.innerHTML="";
+
+data.skills.forEach((skill,index)=>{
+
+box.innerHTML+=`
+
+<div class="item">
+
+<strong>
+${skill.icon} ${escapeHTML(skill.name)}
+</strong>
+
+<div class="item-buttons">
+
+<button class="small"
+onclick="editSkill(${index})">
+✏ Edit
+</button>
+
+<button class="small delete"
+onclick="deleteSkill(${index})">
+🗑 Delete
+</button>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+}
+
+
+function addSkill(){
+
+let name=prompt("Skill name:");
+
+if(!name)return;
+
+data.skills.push({
+
+icon:"⭐",
+
+name:name
+
+});
+
+saveData();
+
+renderWebsite();
+
+renderAdminSkills();
+
+showToast("Skill added!");
+
+}
+
+
+function editSkill(index){
+
+let name=
+prompt("Skill name:",data.skills[index].name);
+
+if(!name)return;
+
+data.skills[index].name=name;
+
+saveData();
+
+renderWebsite();
+
+renderAdminSkills();
+
+showToast("Skill updated!");
+
+}
+
+
+function deleteSkill(index){
+
+if(confirm("Delete this skill?")){
+
+data.skills.splice(index,1);
+
+saveData();
+
+renderWebsite();
+
+renderAdminSkills();
+
+showToast("Skill deleted!");
+
+}
+
+}
+
+
+/* ==========================
+   ADMIN PASSWORD
+========================== */
+
+function changeAdminPassword(){
+
+let newPass=
+document.getElementById("newAdminPass").value;
+
+if(newPass.length<4){
+
+alert("Password must be at least 4 characters.");
+
+return;
+
+}
+
+adminPassword=newPass;
+
+localStorage.setItem(
+"itzshahalAdminPassword",
+adminPassword
+);
+
+document.getElementById("newAdminPass").value="";
+
+showToast("Admin password changed!");
+
+}
+
+
+/* ==========================
+   MOBILE MENU
+========================== */
+
+function toggleMenu(){
+
+document
+.getElementById("navLinks")
+.classList.toggle("show");
+
+}
+
+
+/* ==========================
+   TOAST
+========================== */
+
+function showToast(message){
+
+let toast=document.getElementById("toast");
+
+toast.textContent=message;
+
+toast.classList.add("show");
+
+setTimeout(()=>{
+
+toast.classList.remove("show");
+
+},2200);
+
+}
+
+
+/* ==========================
+   SECURITY HELPER
+========================== */
+
+function escapeHTML(text){
+
+return String(text)
+.replace(/&/g,"&amp;")
+.replace(/</g,"&lt;")
+.replace(/>/g,"&gt;")
+.replace(/"/g,"&quot;")
+.replace(/'/g,"&#039;");
+
+}
+
+
+/* ==========================
+   START
+========================== */
+
+renderWebsite();
+
+</script>
+
+</body>
+</html>
